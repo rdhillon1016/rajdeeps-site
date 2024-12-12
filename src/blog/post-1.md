@@ -1,6 +1,7 @@
 ---
 title: 'My First Blog Post'
 pubDate: 2022-07-01
+description: 'something'
 ---
 # My First Blog Post
 

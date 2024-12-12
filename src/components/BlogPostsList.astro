@@ -1,0 +1,12 @@
+---
+const { posts } = Astro.props;
+---
+<ul>
+    {
+        posts.map((post: any) => (
+            <li>
+                <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+            </li>
+        ))
+    }
+</ul>
