@@ -4,7 +4,10 @@ import PageLayout from "../layouts/PageLayout.astro";
 import BlogPostsList from "../components/BlogPostsList.astro"
 const posts = await getCollection('blog');
 ---
-
+<style></style>
 <PageLayout title="Blog Posts" description="List of blog posts">
-    <BlogPostsList posts={posts} />
+    <main>
+        <h2>All Blog Posts</h2>
+        <BlogPostsList posts={posts} />
+    </main>
 </PageLayout>
