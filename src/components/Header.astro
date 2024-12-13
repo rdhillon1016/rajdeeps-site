@@ -2,17 +2,19 @@
 import Icon from "./Icon.astro";
 ---
 <style></style>
-<header>
+<header class="flex justify-center m-4 gap-4 relative">
     <nav>
-        <ul>
+        <ul class="flex">
             <li><a href="/">Home</a></li>
             <li><a href="/blog">Blog</a></li>
         </ul>
     </nav>
-    <button>
-        <Icon type="light_mode" />
-    </button>
-    <button>
-        <Icon type="dark_mode" />
-    </button>
+    <div class="flex gap-1 absolute top-0 right-0">
+        <button>
+            <Icon type="light_mode" />
+        </button>
+        <button>
+            <Icon type="dark_mode" />
+        </button>
+    </div>
 </header>
