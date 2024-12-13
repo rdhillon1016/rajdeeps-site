@@ -7,7 +7,7 @@ interface Props {
 }
 const { title, description } = Astro.props;
 ---
-<html lang="en">
+<html lang="en" class="dark dark:bg-neutral-950 dark:text-neutral-200">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,9 +16,11 @@ const { title, description } = Astro.props;
         <title>{title}</title>
         <meta name="description" content={description} />
     </head>
-    <body>
-        <Header />
-        <slot />
-        <Footer />
+    <body class="flex justify-center align-middle">
+        <div class="min-w-64 max-w-screen-md">
+            <Header />
+            <slot />
+            <Footer />
+        </div>
     </body>
 </html>
