@@ -1,20 +1,28 @@
 ---
 import Icon from "./Icon.astro";
 ---
-<header class="flex justify-between m-4 gap-6 text-lg">
-    <div class="text-base w-16">Rajdeep Dhillon</div>
-    <nav>
-        <ul class="flex gap-1">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-        </ul>
-    </nav>
-    <div class="flex gap-1">
-        <button>
-            <Icon type="light_mode" />
-        </button>
-        <button>
-            <Icon type="dark_mode" />
-        </button>
+
+<header class="flex justify-between text-md md:text-lg sticky items-center flex-wrap p-2 border-b border-neutral-900 sticky top-0 z-50">
+    <div class="md:text-2xl font-medium dark:text-neutral-50" >Rajdeep Dhillon</div>
+    <div class="flex gap-3 items-center">
+        <nav>
+            <ul class="flex gap-1 items-center">
+                <li>
+                    <a class="rounded-full hover:bg-neutral-700 p-2" href="/">Home</a>
+                </li>
+                <li>
+                    <a class="rounded-full hover:bg-neutral-700 p-2" href="/blog"
+                        >Blog</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex rounded-full border border-teal-200">
+            <button class="rounded-l-full hover:bg-neutral-700 p-2">
+                <Icon type="light_mode" />
+            </button>
+            <button class="rounded-r-full hover:bg-neutral-700 p-2">
+                <Icon type="dark_mode" />
+            </button>
+        </div>
     </div>
 </header>

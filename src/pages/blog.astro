@@ -5,7 +5,7 @@ import BlogPostsList from "../components/BlogPostsList.astro"
 const posts = await getCollection('blog');
 ---
 <style></style>
-<PageLayout title="Blog Posts" description="List of blog posts">
+<PageLayout title="Blog Posts" description="List of blog posts" type="blog">
     <main>
         <h2>All Blog Posts</h2>
         <BlogPostsList posts={posts} />

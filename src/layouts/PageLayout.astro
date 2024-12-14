@@ -2,11 +2,13 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 interface Props {
-    title: string,
-    description: string
+    title: string;
+    description: string;
+    type: string
 }
 const { title, description } = Astro.props;
 ---
+
 <html lang="en" class="dark dark:bg-neutral-950 dark:text-neutral-200">
     <head>
         <meta charset="utf-8" />
@@ -16,10 +18,12 @@ const { title, description } = Astro.props;
         <title>{title}</title>
         <meta name="description" content={description} />
     </head>
-    <body class="flex justify-center align-middle">
-        <div class="min-w-64 max-w-screen-md">
+    <body>
+        <div class="mx-auto min-h-screen max-w-screen-md border border-neutral-900">
             <Header />
-            <slot />
+            <div class="p-2">
+                <slot />
+            </div>
             <Footer />
         </div>
     </body>
