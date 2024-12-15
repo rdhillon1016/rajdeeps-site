@@ -1,18 +1,33 @@
 ---
 import Icon from "./Icon.astro";
 ---
+
 <style></style>
-<footer>
+<footer
+    class="flex bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-t border-primary-900"
+>
     <div>© 2024 Rajdeep Dhillon</div>
-    <ul>
-        <li>
-            <a href="https://github.com/rdhillon1016" target="_blank">
-                <Icon type="github" />
+    <ul class="flex">
+        <li class="mx-1">
+            <a
+                href="https://github.com/rdhillon1016"
+                target="_blank"
+                class="fill-primary-200 hover:fill-primary-700"
+            >
+                <Icon type="github" class="w-7 h-7" />
             </a>
         </li>
-        <li>
-            <a href="mailto:tempemail@fictionaldomain.com">
-                <Icon type="mail" />
+        <li class="mx-1">
+            <a
+                href="mailto:tempemail@fictionaldomain.com"
+                class="hover:fill-primary-700"
+            >
+                <Icon type="mail" class="w-7 h-7" />
+            </a>
+        </li>
+        <li class="mx-1">
+            <a href="/rss.xml" target="_blank" class="hover:fill-primary-700">
+                <Icon type="rss" class="w-7 h-7" />
             </a>
         </li>
     </ul>

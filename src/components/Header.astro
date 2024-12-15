@@ -2,26 +2,35 @@
 import Icon from "./Icon.astro";
 ---
 
-<header class="flex justify-between text-md md:text-lg sticky items-center flex-wrap p-2 border-b border-neutral-900 sticky top-0 z-50">
-    <div class="md:text-2xl font-medium dark:text-neutral-50" >Rajdeep Dhillon</div>
-    <div class="flex gap-3 items-center">
+<header
+    class="flex bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-b border-primary-900 sticky top-0 z-50"
+>
+    <div class="md:text-2xl font-medium text-lg dark:text-primary-50 mr-auto">
+        Rajdeep Dhillon
+    </div>
+    <div class="flex gap-2 items-center">
         <nav>
             <ul class="flex gap-1 items-center">
                 <li>
-                    <a class="rounded-full hover:bg-neutral-700 p-2" href="/">Home</a>
+                    <a
+                        class="rounded-full inline-block bg-dark_accent text-primary-900 hover:bg-primary-700 p-2"
+                        href="/">Home</a
+                    >
                 </li>
                 <li>
-                    <a class="rounded-full hover:bg-neutral-700 p-2" href="/blog"
-                        >Blog</a>
+                    <a
+                        class="rounded-full inline-block hover:bg-primary-700 p-2"
+                        href="/blog">Blog</a
+                    >
                 </li>
             </ul>
         </nav>
-        <div class="flex rounded-full border border-teal-200">
-            <button class="rounded-l-full hover:bg-neutral-700 p-2">
-                <Icon type="light_mode" />
+        <div class="flex">
+            <button class="hover:fill-primary-700 mx-1">
+                <Icon type="light_mode" class="w-6 h-6" />
             </button>
-            <button class="rounded-r-full hover:bg-neutral-700 p-2">
-                <Icon type="dark_mode" />
+            <button class="fill-dark_accent hover:fill-primary-none mx-1">
+                <Icon type="dark_mode" class="w-6 h-6" />
             </button>
         </div>
     </div>
