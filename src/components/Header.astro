@@ -7,7 +7,7 @@ const { pageType } = Astro.props;
 ---
 
 <header
-    class="flex bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-b border-primary-900 sticky top-0 z-50"
+    class="flex bg-primary-200 dark:bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-b border-primary-400 dark:border-primary-900 sticky top-0 z-50"
 >
     <div class="md:text-2xl font-medium text-lg dark:text-primary-50 mr-auto">
         Rajdeep Dhillon
@@ -19,8 +19,8 @@ const { pageType } = Astro.props;
                     <a
                         class={"rounded-full inline-block p-2 " +
                             (pageType === "home"
-                                ? "bg-dark_accent text-primary-900"
-                                : "hover:bg-primary-700 focus:bg-primary-700")}
+                                ? "bg-light_accent text-primary-200 dark:bg-dark_accent dark:text-primary-900"
+                                : "hover:bg-primary-400 dark:hover:bg-primary-700")}
                         href="/">Home</a
                     >
                 </li>
@@ -28,20 +28,38 @@ const { pageType } = Astro.props;
                     <a
                         class={"rounded-full inline-block p-2 " +
                             (pageType === "blog"
-                                ? "bg-dark_accent text-primary-900"
-                                : "hover:bg-primary-700 focus:bg-primary-700")}
+                                ? "bg-light_accent text-primary-200 dark:bg-dark_accent dark:text-primary-900"
+                                : "hover:bg-primary-400 dark:hover:bg-primary-700")}
                         href="/blog">Blog</a
                     >
                 </li>
             </ul>
         </nav>
         <div class="flex">
-            <button class="hover:fill-primary-700 focus:fill-primary-700 mx-1">
+            <button
+                class="light-mode-toggle fill-light_accent dark:fill-current hover:fill-primary-400 dark:hover:fill-primary-700 mx-1"
+            >
                 <Icon type="light_mode" class="w-6 h-6" />
             </button>
-            <button class="fill-dark_accent mx-1">
+            <script>
+                const lightButton = document.querySelector(".light-mode-toggle");
+                lightButton?.addEventListener("click", () => {
+                    localStorage.setItem("themePref", "light");
+                    document.documentElement.classList.remove("dark");
+                });
+            </script>
+            <button
+                class="dark-mode-toggle hover:fill-primary-400 dark:fill-dark_accent dark:hover:fill-current mx-1"
+            >
                 <Icon type="dark_mode" class="w-6 h-6" />
             </button>
+            <script>
+                const darkButton = document.querySelector(".dark-mode-toggle");
+                darkButton?.addEventListener("click", () => {
+                    localStorage.removeItem("themePref");
+                    document.documentElement.classList.add("dark");
+                });
+            </script>
         </div>
     </div>
 </header>

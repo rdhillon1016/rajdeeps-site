@@ -10,7 +10,7 @@ export default {
 			current: 'currentColor',
 			primary: colors.zinc,
 			dark_accent: colors.teal[200],
-			light_accent: colors.blue,
+			light_accent: colors.sky[800],
 			black: colors.black
 		}
 	},

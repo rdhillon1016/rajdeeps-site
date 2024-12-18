@@ -23,10 +23,10 @@ const formattedDateString = pubDate.toLocaleDateString("en-ca", {
 <style></style>
 <PageLayout title={title} description={description}>
     <main>
-        <div>
+        <div class="mb-2">
             <time datetime={formattedDateString}>{formattedDateString}</time>
         </div>
-        <article class="prose prose-neutral dark:prose-invert max-w-none">
+        <article class="prose prose-li:my-0 prose-neutral dark:prose-invert max-w-none">
             <Content />
         </article>
     </main>
