@@ -1,5 +1,4 @@
 ---
-import Icon from "./Icon.astro";
 interface Props {
     pageType?: string;
 }
@@ -12,28 +11,26 @@ const { pageType } = Astro.props;
     <div class="md:text-2xl font-medium text-lg dark:text-primary-50 mr-auto">
         Rajdeep Dhillon
     </div>
-    <div class="flex gap-2 items-center">
-        <nav>
-            <ul class="flex gap-1 items-center">
-                <li>
-                    <a
-                        class={"rounded-full inline-block p-2 " +
-                            (pageType === "home"
-                                ? "dark:bg-dark_accent dark:text-primary-900"
-                                : "dark:hover:bg-primary-700")}
-                        href="/">Home</a
-                    >
-                </li>
-                <li>
-                    <a
-                        class={"rounded-full inline-block p-2 " +
-                            (pageType === "blog"
-                                ? "dark:bg-dark_accent dark:text-primary-900"
-                                : "dark:hover:bg-primary-700")}
-                        href="/blog">Blog</a
-                    >
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <ul class="flex gap-1 items-center font-semibold">
+            <li>
+                <a
+                    class={"rounded-full inline-block p-2 " +
+                        (pageType === "home"
+                            ? "dark:bg-dark_accent dark:text-primary-900"
+                            : "dark:hover:bg-primary-700 dark:text-primary-400 dark:hover:text-primary-200")}
+                    href="/">Home</a
+                >
+            </li>
+            <li>
+                <a
+                    class={"rounded-full inline-block p-2 " +
+                        (pageType === "blog"
+                            ? "dark:bg-dark_accent dark:text-primary-900"
+                            : "dark:hover:bg-primary-700 dark:text-primary-400 dark:hover:text-primary-200")}
+                    href="/blog">Blog</a
+                >
+            </li>
+        </ul>
+    </nav>
 </header>
