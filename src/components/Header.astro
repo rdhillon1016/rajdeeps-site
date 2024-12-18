@@ -1,5 +1,9 @@
 ---
 import Icon from "./Icon.astro";
+interface Props {
+    pageType?: string;
+}
+const { pageType } = Astro.props;
 ---
 
 <header
@@ -13,23 +17,29 @@ import Icon from "./Icon.astro";
             <ul class="flex gap-1 items-center">
                 <li>
                     <a
-                        class="rounded-full inline-block bg-dark_accent text-primary-900 hover:bg-primary-700 p-2"
+                        class={"rounded-full inline-block p-2 " +
+                            (pageType === "home"
+                                ? "bg-dark_accent text-primary-900"
+                                : "hover:bg-primary-700 focus:bg-primary-700")}
                         href="/">Home</a
                     >
                 </li>
                 <li>
                     <a
-                        class="rounded-full inline-block hover:bg-primary-700 p-2"
+                        class={"rounded-full inline-block p-2 " +
+                            (pageType === "blog"
+                                ? "bg-dark_accent text-primary-900"
+                                : "hover:bg-primary-700 focus:bg-primary-700")}
                         href="/blog">Blog</a
                     >
                 </li>
             </ul>
         </nav>
         <div class="flex">
-            <button class="hover:fill-primary-700 mx-1">
+            <button class="hover:fill-primary-700 focus:fill-primary-700 mx-1">
                 <Icon type="light_mode" class="w-6 h-6" />
             </button>
-            <button class="fill-dark_accent hover:fill-primary-none mx-1">
+            <button class="fill-dark_accent mx-1">
                 <Icon type="dark_mode" class="w-6 h-6" />
             </button>
         </div>

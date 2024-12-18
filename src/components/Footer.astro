@@ -4,7 +4,7 @@ import Icon from "./Icon.astro";
 
 <style></style>
 <footer
-    class="flex bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-t border-primary-900"
+    class="flex justify-between text-base items-center flex-wrap p-2 border-t border-primary-900"
 >
     <div>© 2024 Rajdeep Dhillon</div>
     <ul class="flex">
@@ -20,13 +20,17 @@ import Icon from "./Icon.astro";
         <li class="mx-1">
             <a
                 href="mailto:tempemail@fictionaldomain.com"
-                class="hover:fill-primary-700"
+                class="fill-primary-200 hover:fill-primary-700"
             >
                 <Icon type="mail" class="w-7 h-7" />
             </a>
         </li>
         <li class="mx-1">
-            <a href="/rss.xml" target="_blank" class="hover:fill-primary-700">
+            <a
+                href="/rss.xml"
+                target="_blank"
+                class="fill-primary-200 hover:fill-primary-700"
+            >
                 <Icon type="rss" class="w-7 h-7" />
             </a>
         </li>

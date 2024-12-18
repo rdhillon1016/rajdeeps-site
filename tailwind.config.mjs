@@ -14,6 +14,8 @@ export default {
 			black: colors.black
 		}
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 	darkMode: 'selector'
 }

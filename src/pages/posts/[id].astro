@@ -5,7 +5,7 @@ import PageLayout from "../../layouts/PageLayout.astro";
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
     return posts.map((post) => ({
-        params: { slug: post.id },
+        params: { id: post.id },
         props: { post },
     }));
 }
@@ -19,12 +19,15 @@ const formattedDateString = pubDate.toLocaleDateString("en-ca", {
     day: "numeric",
 });
 ---
+
 <style></style>
 <PageLayout title={title} description={description}>
     <main>
         <div>
             <time datetime={formattedDateString}>{formattedDateString}</time>
         </div>
-        <Content />
+        <article class="prose prose-neutral dark:prose-invert max-w-none">
+            <Content />
+        </article>
     </main>
 </PageLayout>

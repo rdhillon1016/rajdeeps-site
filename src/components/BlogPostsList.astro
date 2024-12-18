@@ -1,11 +1,30 @@
 ---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    posts: CollectionEntry<"blog">[];
+}
 const { posts } = Astro.props;
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
+
 <ul>
     {
         posts.map((post: any) => (
-            <li>
-                <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+            <li class="my-2 [&:not(:last-child)]:border-b pb-2">
+                <a
+                    href={`/posts/${post.id}/`}
+                    class="block hover:bg-primary-900 py-2 px-1 rounded-md"
+                >
+                    <div class="font-thin text-sm">
+                        {post.data.pubDate.toLocaleDateString("en-ca", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        })}
+                    </div>
+                    <h2 class="font-semibold text-lg underline underline-offset-2">{post.data.title}</h2>
+                    <p class="font-thin text-sm">{post.data.description}</p>
+                </a>
             </li>
         ))
     }
