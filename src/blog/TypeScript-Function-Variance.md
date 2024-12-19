@@ -55,7 +55,7 @@ const a: A = b;
 
 This, to me, can be logically reasoned about. If I ask you for a function that returns some `string`, and you give me a function that returns `"wow"`, technically that satisfies my ask, since `"wow"` is substitutable for a string in TypeScript.
 
-You can't go the other way around. If I ask you for a function that returns the exact string `"wow"` and you give me a function that returns some `string`, I can't be sure that the string that is returned will be `"wow"`, and thus this is not allowed in TypeScript:
+You can't go the other way around. If I ask you for a function that returns the exact string `"wow"` and you give me a function that returns some `string`, I can't be sure that the string that is returned will be `"wow"`, and so this is not allowed in TypeScript:
 ```js
 // The following will NOT compile
 const a: A = nameA => "someString";
@@ -66,7 +66,7 @@ We can thus say that functions are **covariant** on their return type.
 
 ## Function parameter variance
 
-In TypeScript, functions are **bivariant** on their parameters by default. Consider the simple case where two functions each have one parameter. If one parameter is assignable to the other, then the two functions are assignable to each other (in any direction).
+In TypeScript, functions are [bivariant on their parameters by default](https://www.typescriptlang.org/docs/handbook/type-compatibility.html#function-parameter-bivariance). Consider the simple case where two functions each have one parameter. If one parameter is assignable to the other, then the two functions are assignable to each other (in any direction).
 
 ```js
 interface A {
@@ -83,7 +83,7 @@ const aTwo: A = b;
 const bTwo: B = a;
 ```
 
-This can create an unsafe scenario in the case that the caller expects a function that takes a looser type (e.g `string`), but is given a function that takes a more constrained type (e.g `"x"`). If that function is then invoked with some string other than `"x"`, the function may throw a runtime error.
+This can create an unsafe scenario in the case that the caller expects a function that takes a looser type (e.g `string`), but is given a function that takes a more constrained type (e.g `"x"`). If that function is then called with some string other than `"x"`, the function may throw a runtime error.
 
 To guard against this behaviour at compile-time, you can set the `strictFunctionTypes` TypeScript compiler flag. If the flag is set, that will enforce **contravariance** on function parameter types. If I ask you for a function that takes in a `string`, and you give me a function that only takes in the specific string `"x"`, that would be invalid:
 ```js
