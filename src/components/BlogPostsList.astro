@@ -12,7 +12,7 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
         posts.map((post: any) => (
             <li class="my-2 [&:not(:last-child)]:border-b pb-2">
                 <a
-                    href={`/posts/${post.id}/`}
+                    href={`/blog-posts/${post.id}/`}
                     class="block dark:hover:bg-primary-900 py-2 px-1 rounded-md"
                 >
                     <div class="font-thin text-sm">
