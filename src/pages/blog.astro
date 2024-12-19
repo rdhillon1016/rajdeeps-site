@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+import BlogPostsList from "../components/BlogPostsList.astro";
+const posts = await getCollection("blog");
+---
+
+<style></style>
+<PageLayout title="Blog Posts" description="List of blog posts" pageType="blog">
+    <main>
+        <h2 class="text-2xl font-bold">All Blog Posts</h2>
+        <BlogPostsList posts={posts} />
+    </main>
+</PageLayout>
