@@ -3,14 +3,13 @@ import { getCollection } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
 import BlogPostsList from "../components/BlogPostsList.astro";
 import { Content as IntroContent } from "../misc-content/intro.md";
+import { FIRST_NAME, LAST_NAME, GITHUB_URL, EMAIL } from "../constants.ts";
 
 const posts = await getCollection("blog").then((posts) => posts.slice(0, 3));
 ---
-
-<style></style>
 <PageLayout
-	title="Rajdeep's Home Page"
-	description="About Rajdeep Dhillon's software development journey"
+	title=`${FIRST_NAME}'s Home Page`
+	description=`About ${FIRST_NAME} ${LAST_NAME}'s software development journey`
 	pageType="home"
 >
 	<main>
@@ -18,17 +17,21 @@ const posts = await getCollection("blog").then((posts) => posts.slice(0, 3));
 			<IntroContent />
 			<address class="not-italic">
 				You can explore my GitHub at <a
-					href="https://github.com/rdhillon1016"
-					target="_blank">github.com/rdhillon1016</a
-				>. Further, you can reach me at <a href="mailto:rdhillondev@gmail.com"
-					>some@some.com</a
-				>
+					href=`https://${GITHUB_URL}`
+					target="_blank">{GITHUB_URL}</a
+				>. Further, you can reach me at <a
+					href=`mailto:${EMAIL}`>{EMAIL}</a
+				>.
 			</address>
 		</section>
 		<section class="mt-5">
 			<h2 class="text-2xl font-bold">Recent Blog Posts</h2>
 			<BlogPostsList posts={posts} />
-			<a href="/blog" class="inline-block border dark:border-dark_accent p-1 dark:hover:bg-primary-700">See All Posts</a>
+			<a
+				href="/blog"
+				class="inline-block border dark:border-dark_accent p-1 dark:hover:bg-primary-700"
+				>See All Posts</a
+			>
 		</section>
 	</main>
 </PageLayout>

@@ -1,18 +1,19 @@
 ---
 import Icon from "./Icon.astro";
+import { FIRST_NAME, LAST_NAME, GITHUB_URL, EMAIL } from "../constants.ts";
 ---
 
 <style></style>
 <footer
     class="flex justify-between text-base items-center flex-wrap p-2 border-t border-primary-900"
 >
-    <div>© 2024 Rajdeep Dhillon</div>
+    <div>© 2024 {FIRST_NAME} {LAST_NAME}</div>
     <ul class="flex">
         <li class="mx-1">
             <a
-                href="https://github.com/rdhillon1016"
+                href=`https://${GITHUB_URL}`
                 target="_blank"
-                aria-label="Rajdeep's GitHub"
+                aria-label=`${FIRST_NAME}'s GitHub`
                 class="dark:fill-primary-200 dark:hover:fill-primary-700"
             >
                 <Icon type="github" class="w-7 h-7" />
@@ -20,9 +21,9 @@ import Icon from "./Icon.astro";
         </li>
         <li class="mx-1">
             <a
-                href="mailto:rdhillondev@gmail.com"
+                href=`mailto:${EMAIL}`
                 class="dark:fill-primary-200 dark:hover:fill-primary-700"
-                aria-label="Rajdeep's Email"
+                aria-label=`${FIRST_NAME}'s Email`
             >
                 <Icon type="mail" class="w-7 h-7" />
             </a>

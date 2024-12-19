@@ -1,4 +1,6 @@
 ---
+import { FIRST_NAME, LAST_NAME } from "../constants.ts";
+
 interface Props {
     pageType?: string;
 }
@@ -9,7 +11,7 @@ const { pageType } = Astro.props;
     class="flex dark:bg-primary-950 justify-between text-base items-center flex-wrap p-2 border-b dark:border-primary-900 sticky top-0 z-50"
 >
     <div class="md:text-2xl font-medium text-lg dark:text-primary-50 mr-auto">
-        Rajdeep Dhillon
+        {FIRST_NAME} {LAST_NAME}
     </div>
     <nav>
         <ul class="flex gap-1 items-center font-semibold">
