@@ -28,7 +28,7 @@ const posts = await getCollection("blog").then((posts) => posts.slice(0, 3));
 			<h2 class="text-2xl font-bold">Recent Blog Posts</h2>
 			<BlogPostsList posts={posts} />
 			<a
-				href="/blog"
+				href="/blog-posts"
 				class="inline-block border dark:border-dark_accent p-1 dark:hover:bg-primary-700"
 				>See All Posts</a
 			>
