@@ -1,6 +1,6 @@
 ---
 title: 'Function Variance in TypeScript'
-pubDate: 2024-12-18
+pubDate: 2024-12-18 07:30:00 -8
 description: 'An explanation of how generic type variance relates to functions, and how that is reflected in TypeScript.'
 ---
 # Function Variance in TypeScript
