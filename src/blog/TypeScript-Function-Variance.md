@@ -124,6 +124,6 @@ let c: C = {
 }
 ```
 
-All of a sudden, this passes compilation!
+All of a sudden, this passes compilation... but why?
 
-Interestingly (and frustratingly), the aforementioned `strictFunctionTypes` flag does not apply to functions declared in [method syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions). The documentation suggests that this restriction was implemented purely for [historical reasons](https://www.typescriptlang.org/tsconfig/#strictFunctionTypes).
+Interestingly (and frustratingly), the aforementioned `strictFunctionTypes` flag does not apply to functions declared in [method syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions). The documentation suggests that this restriction was implemented purely to [avoid breaking existing code](https://www.typescriptlang.org/tsconfig/#strictFunctionTypes).
